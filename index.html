@@ -17,25 +17,279 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
+<!--Dashboard -->
+<div class="dashboard">
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <!-- Nav -->
+  <section class="navigation">
+    <img src="img/logo-ynov-solutions.png" alt="Ynov Logo" class="logo">
+
+    <div>
+      <span class="material-symbols-outlined">dashboard</span>
+      <span class="material-symbols-outlined">monitor_heart</span>
+      <span class="material-symbols-outlined">group_add</span>
+      <span class="material-symbols-outlined">event</span>
+      <span class="material-symbols-outlined">settings</span>
+    </div>
+
+    <img src="img/image5.png" alt="Profil utilisateur" class="user">
+
+  </section>
+
+  <!-- Main -->
+  <section class="main">
+
+    <!-- Search Part -->
+    <div class="search">
+      <form action="#">
+        <label for="search"></label><input type="text" name="search" id="search" placeholder="Rechercher ici !">
+        <span class="material-symbols-outlined">search</span>
+      </form>
+      <div class="notification">
+        <span class="material-symbols-outlined">notifications</span>
+        <span class="material-symbols-outlined">edit</span>
+      </div>
+    </div>
+
+    <div class="title">
+      <h1>Mon projet</h1>
+      <form action="">
+        <label for="projects">Sort by</label>
+        <select name="projects" id="projects">
+          <option value="recent">Recent Project</option>
+          <option value="finished">Finished Project</option>
+          <option value="ongoing">Ongoing Project</option>
+          <option value="stalled">Stalled Project</option>
+        </select>
+      </form>
+    </div>
+
+    <!--Project List-->
+    <div class="project_list">
+
+      <!--Project 1-->
+      <div class="project">
+        <div class="category category_color1"></div>
+        <h2>Design & Graphiques</h2>
+        <p>Récemment actif</p>
+
+        <ul class="activity">
+          <li>Arrive bientôt</li>
+          <li>Couverture d'un livre</li>
+        </ul>
+
+        <div class="meta">
+          <div class="contributors">
+            <img src="img/image1.jpg" alt="">
+            <img src="img/image2.png" alt="" class="stack">
+            <img src="img/image3.jpeg" alt="" class="stack">
+          </div>
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+      </div>
+
+      <!--Project 2-->
+      <div class="project">
+        <div class="category category_color2"></div>
+        <h2>Magazine</h2>
+        <p>1 heure</p>
+
+        <ul class="activity">
+          <li>Contenu de la page éditoriale</li>
+        </ul>
+
+        <div class="meta">
+          <div class="contributors">
+            <img src="img/image4.png" alt="">
+            <img src="img/image5.png" alt="" class="stack">
+          </div>
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+      </div>
+
+      <!--Project 3-->
+      <div class="project">
+        <div class="category category_color3"></div>
+        <h2>Mise en page</h2>
+        <p>3 jours</p>
+
+        <ul class="activity">
+          <li>Corriger la mise en page sur les annonces de page</li>
+        </ul>
+
+        <div class="meta">
+          <div class="contributors">
+            <img src="img/image6.png" alt="">
+          </div>
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+      </div>
+
+      <!--Project 4-->
+      <div class="project">
+        <div class="category category_color4"></div>
+        <h2>Image de marque</h2>
+        <p>4 heures</p>
+
+        <ul class="activity">
+          <li>Brainstorming</li>
+        </ul>
+
+        <div class="meta">
+          <div class="contributors">
+            <img src="img/image7.png" alt="">
+          </div>
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+      </div>
+
+
+
+      <!--Project 5-->
+      <div class="project">
+        <div class="category category_color5"></div>
+        <h2>Lignes directrices</h2>
+        <p>30 minutes</p>
+
+        <ul class="activity">
+          <li>Établir des directives de marque pour les cosmétiques</li>
+        </ul>
+
+        <div class="meta">
+          <div class="contributors">
+            <img src="img/image8.png" alt="">
+            <img src="img/image4.png" alt="" class="stack">
+          </div>
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+      </div>
+
+      <!--Project 6-->
+      <div class="project">
+        <div class="category category_color6"></div>
+        <h2>Séance photo</h2>
+        <p>3 semaines</p>
+
+        <ul class="activity">
+          <li>Photos pour le magazine Forbes</li>
+        </ul>
+
+        <div class="meta">
+          <div class="contributors">
+            <img src="img/image2.png" alt="">
+            <img src="img/image3.jpeg" alt="" class="stack">
+            <img src="img/image1.jpg" alt="" class="stack">
+          </div>
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary -->
+  <section class="secondary">
+    <div class="chart">
+      <h2>Total project</h2>
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+    <!-- Recent project -->
+    <div class="recent_project">
+      <div class="listing">
+        <div class="title">
+          <div class="category"></div>
+          <h2>Séance Photo</h2>
+          <p>by Mura Lee</p>
+        </div>
+        <span class="material-symbols-outlined">more_vert</span>
+      </div>
+
+      <div class="listing">
+        <div class="title">
+          <div class="category"></div>
+          <h2>Mise en page</h2>
+          <p>by Boris Bonavan</p>
+        </div>
+        <span class="material-symbols-outlined">more_vert</span>
+      </div>
+    </div>
+
+    <div class="listing">
+      <div class="title">
+        <div class="category"></div>
+        <h2>Image de marque</h2>
+        <p>by Tolkien Navar</p>
+      </div>
+      <span class="material-symbols-outlined">more_vert</span>
+    </div>
+
+    <div class="listing">
+      <div class="title">
+        <div class="category"></div>
+        <h2>Graphique & Design</h2>
+        <p>by Malvoy Tanak</p>
+      </div>
+      <span class="material-symbols-outlined">more_vert</span>
+    </div>
+  </section>
+</div>
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+<script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Terminés', 'En cours', 'Bloqué', 'Publié', 'PLanifié',],
+      datasets: [{
+        label: 'First charts',
+        data: [12, 19, 3, 5, 2],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
 </body>
+
 
 </html>
