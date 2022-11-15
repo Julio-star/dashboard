@@ -40,15 +40,14 @@ body{
   color: #727272;
 }
 
-.dashboard .navigation div{
-  margin-top: 10px;
-}
-
 /* Main dashboard */
 /* Search */
 .dashboard .main .search form{
-  margin-top: 50px;
   position: relative;
+}
+
+.dashboard .main .search{
+  margin-top: 40px;
 }
 
 .dashboard .main .search form input{
@@ -57,6 +56,7 @@ body{
   padding: 10px 10px 10px 60px;
   border: 1px solid #dadada;
   background-color: rgba(0 0 0 / 0);
+  border-radius: 10px;
 }
 
 .dashboard .main .search form span{
@@ -72,6 +72,17 @@ body{
 
 .dashboard .main .search .notification span:nth-child(1){
   margin-top: 15px;
+  position: relative;
+}
+
+.dashboard .main .search .notification span:nth-child(1)::before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: sandybrown;
+  position: absolute;
+  border-radius: 50%;
+  top: 5px;
 }
 
 /* My Project  */
@@ -84,17 +95,17 @@ body{
   line-height: 0px;
 }
 
-.dashboard .main .title form {
+.dashboard .main .title {
   margin-top: 40px;
 }
 
-.dashboard .main .title form label{
+.dashboard .main .title label{
   margin-right: 15px;
   color: #727272;
   font-size: 16px;
 }
 
-.dashboard .main .title form select{
+.dashboard .main .title select{
   border: none;
   font-size: 16px;
   background-color: rgba(0 0 0 / 0);
@@ -187,4 +198,171 @@ body{
 
 .category_color6{
   background-color: limegreen !important;
+}
+
+/* Secndary Statics */
+/* Chart */
+.dashboard .secondary .chart .complete {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.dashboard .secondary .chart .complete h3 {
+  line-height: 0;
+}
+
+.dashboard .secondary .chart .complete p {
+  color: #727272;
+}
+
+.dashboard .secondary .chart {
+  background-color: white;
+  padding: 15px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Recent Projects */
+.dashboard .secondary .recent_project .listing h2 {
+  line-height: 0;
+}
+
+.dashboard .secondary .recent_project .listing p {
+  color: #727272;
+}
+
+.dashboard .secondary .recent_project .listing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard .secondary .recent_project {
+  background-color: white;
+  padding: 15px 15px 15px 50px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.dashboard .secondary .recent_project .category {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  position: absolute;
+  left: 10px;
+  margin-top: 20px;
+}
+
+/* Media Query */
+@media only screen and (min-width: 768px){
+  /* Dashboard search */
+  .dashboard .main .search{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+
+  .dashboard .main .search form{
+    margin-top: 10px;
+  }
+
+  section.main .project_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+
+  section.main .project_list .project {
+    width: 47%;
+  }
+
+  section.main .project_list .project span{
+    margin-top: 15px;
+  }
+
+  /* Recent project */
+  section.secondary{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: white;
+    padding-top: 70px;
+  }
+
+  section.secondary .chart{
+    width: 40%;
+  }
+
+  section.secondary .recent_project{
+    width: 55%;
+  }
+
+  section.secondary .recent_project .listing span{
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .dashboard .navigation,
+  .dashboard .navigation div span,
+  section.secondary {
+    display: block;
+  }
+
+  .dashboard .navigation{
+    width: 60px;
+    position: fixed;
+    z-index: 10;
+  }
+
+  section.main{
+    width: 60%;
+    margin-left: 90px;
+    margin-right: 20px;
+  }
+
+  section.secondary{
+    width: 27%;
+    padding-top: 0;
+    position: fixed;
+    top: 20px;
+    right: 0;
+    background-color: transparent;
+  }
+
+  section.secondary .chart,
+  section.secondary .recent_project{
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .dashboard .navigation div{
+    margin-top: 20vh;
+    margin-bottom: 19vh;
+  }
+
+  .dashboard .navigation div span{
+    margin-top: 5vh;
+  }
+}
+
+@media only screen and (min-width: 1111px){
+  section.main .project_list .project{
+    width: 32%;
+  }
+
+  section.main{
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 1500px){
+  section.secondary .recent_project .listing:nth-child(4){
+    display: none;
+  }
+
+  section.main{
+    width: 65%;
+  }
 }

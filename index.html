@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Mon  dashboard</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -56,7 +56,7 @@
     <!-- Search Part -->
     <div class="search">
       <form action="#">
-        <label for="search"></label><input type="text" name="search" id="search" placeholder="Rechercher ici !">
+        <input type="text" name="search" id="searchProject" placeholder="Rechercher ici !">
         <span class="material-symbols-outlined">search</span>
       </form>
       <div class="notification">
@@ -67,25 +67,24 @@
 
     <div class="title">
       <h1>Mon projet</h1>
-      <form action="">
-        <label for="projects">Sort by</label>
-        <select name="projects" id="projects">
-          <option value="recent">Recent Project</option>
-          <option value="finished">Finished Project</option>
-          <option value="ongoing">Ongoing Project</option>
-          <option value="stalled">Stalled Project</option>
+        <label for="projectFilter">Trier par</label>
+        <select name="projects" id="projectFilter">
+          <option value="">...</option>
+          <option value="recent">Projet récent</option>
+          <option value="finished">Projet Terminé</option>
+          <option value="ongoing">Projet en cours</option>
+          <option value="stalled">Projet bloqué</option>
         </select>
-      </form>
     </div>
 
     <!--Project List-->
     <div class="project_list">
 
       <!--Project 1-->
-      <div class="project">
+      <div class="project" data-status="finished" title="Projet Terminé">
         <div class="category category_color1"></div>
         <h2>Design & Graphiques</h2>
-        <p>Récemment actif</p>
+        <p>Recemment actif</p>
 
         <ul class="activity">
           <li>Arrive bientôt</li>
@@ -103,10 +102,10 @@
       </div>
 
       <!--Project 2-->
-      <div class="project">
+      <div class="project" data-status="ongoing" title="Projet En Cours">
         <div class="category category_color2"></div>
         <h2>Magazine</h2>
-        <p>1 heure</p>
+        <p>2 heures</p>
 
         <ul class="activity">
           <li>Contenu de la page éditoriale</li>
@@ -122,7 +121,7 @@
       </div>
 
       <!--Project 3-->
-      <div class="project">
+      <div class="project" data-status="stalled" title="Projet Bloqué">
         <div class="category category_color3"></div>
         <h2>Mise en page</h2>
         <p>3 jours</p>
@@ -140,7 +139,7 @@
       </div>
 
       <!--Project 4-->
-      <div class="project">
+      <div class="project" data-status="recent" title="Projet Récent">
         <div class="category category_color4"></div>
         <h2>Image de marque</h2>
         <p>4 heures</p>
@@ -160,10 +159,10 @@
 
 
       <!--Project 5-->
-      <div class="project">
+      <div class="project" data-status="finished" title="Projet Terminé">
         <div class="category category_color5"></div>
         <h2>Lignes directrices</h2>
-        <p>30 minutes</p>
+        <p>2 mois</p>
 
         <ul class="activity">
           <li>Établir des directives de marque pour les cosmétiques</li>
@@ -179,7 +178,7 @@
       </div>
 
       <!--Project 6-->
-      <div class="project">
+      <div class="project" data-status="ongoing" title="Projet En Cours">
         <div class="category category_color6"></div>
         <h2>Séance photo</h2>
         <p>3 semaines</p>
@@ -206,12 +205,17 @@
     <div class="chart">
       <h2>Total project</h2>
       <canvas id="myChart" width="400" height="400"></canvas>
+      <div class="complete">
+        <h3>3 Terminées</h3>
+        <p>sur 5 projets</p>
+      </div>
     </div>
     <!-- Recent project -->
     <div class="recent_project">
+
       <div class="listing">
         <div class="title">
-          <div class="category"></div>
+          <div class="category category_color1"></div>
           <h2>Séance Photo</h2>
           <p>by Mura Lee</p>
         </div>
@@ -220,30 +224,31 @@
 
       <div class="listing">
         <div class="title">
-          <div class="category"></div>
+          <div class="category category_color2"></div>
           <h2>Mise en page</h2>
           <p>by Boris Bonavan</p>
         </div>
         <span class="material-symbols-outlined">more_vert</span>
       </div>
-    </div>
 
-    <div class="listing">
-      <div class="title">
-        <div class="category"></div>
-        <h2>Image de marque</h2>
-        <p>by Tolkien Navar</p>
+      <div class="listing">
+        <div class="title">
+          <div class="category category_color3"></div>
+          <h2>Image de marque</h2>
+          <p>by Tolkien Navar</p>
+        </div>
+        <span class="material-symbols-outlined">more_vert</span>
       </div>
-      <span class="material-symbols-outlined">more_vert</span>
-    </div>
 
-    <div class="listing">
-      <div class="title">
-        <div class="category"></div>
-        <h2>Graphique & Design</h2>
-        <p>by Malvoy Tanak</p>
+      <div class="listing">
+        <div class="title">
+          <div class="category category_color4"></div>
+          <h2>Graphique & Design</h2>
+          <p>by Malvoy Tanak</p>
+        </div>
+        <span class="material-symbols-outlined">more_vert</span>
       </div>
-      <span class="material-symbols-outlined">more_vert</span>
+
     </div>
   </section>
 </div>
@@ -252,44 +257,5 @@
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
-<script>
-  const ctx = document.getElementById('myChart').getContext('2d');
-  const myChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Terminés', 'En cours', 'Bloqué', 'Publié', 'PLanifié',],
-      datasets: [{
-        label: 'First charts',
-        data: [12, 19, 3, 5, 2],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
 </body>
-
-
 </html>
